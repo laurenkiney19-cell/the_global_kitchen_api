@@ -1,11 +1,14 @@
 import express from "express";
 
+import {
+    createRecipe,
+    getAllRecipes
+} from "../controllers/recipe.controller.js";
+
 const router = express.Router();
 
-router.get("/", (req, res) => {
-    res.json({
-        message: "Recipe route working"
-    });
-});
+router.post("/", createRecipe);
+
+router.get("/", getAllRecipes);
 
 export default router;
